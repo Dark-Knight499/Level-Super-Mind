@@ -1,20 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Nav from "./components/Nav";
-import HomePage from "./pages/HomePage";
-import PricingPage from "./pages/PricingPage";
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import PricingPage from './pages/PricingPage'
 
-function App() {
+function App () {
   return (
     <div>
-      <Router>
-        <Nav/>
-        <Routes>
-          <Route path='/' element={<HomePage/>} />
-          <Route path='/pricing' element={<PricingPage/>} />
-        </Routes>
-      </Router>
+      <div className='fixed inset-0 z-0'>
+        <div className='absolute inset-0 bg-[#111826]'></div>
+      </div>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+      </Routes>
     </div>
   )
 }
-export default App;
+export default App
