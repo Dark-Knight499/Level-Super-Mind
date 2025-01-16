@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import PricingPage from './pages/PricingPage'
+import Chatbot from './pages/Chatbot'
 
 function App () {
   return (
@@ -11,6 +12,7 @@ function App () {
       </div>
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/chatbot' element={<Chatbot  />} />
       </Routes>
     </div>
   )

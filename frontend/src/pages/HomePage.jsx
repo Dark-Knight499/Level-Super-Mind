@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Zap } from 'lucide-react'
 import FeatureCard from '../components/HomePage/FeatureCard'
 import TeamCard from '../components/HomePage/TeamCard'
+import Chatbot from './Chatbot'
 
 const navigation = [
   { name: 'Features', href: '#feature' },
@@ -39,6 +40,17 @@ const features = [
 
 export default function HomePage () {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const[chatbot, setChatbot] = useState(false)
+
+  const showchatbot = () => {
+    if(!chatbot) {
+    setChatbot(true)
+  }
+  else {
+    setChatbot(false)
+  }
+
+  }
 
   return (
     <div>
@@ -198,6 +210,18 @@ export default function HomePage () {
         </div>
         <footer className='bg-transparent text-white w-full text-center'>© 2024 Your Company, Inc. All rights reserved.</footer>
       </div>
+      <button onClick={showchatbot} className='fixed bottom-4 right-4 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md focus:outline-none'>
+        chat
+      </button>
+      {chatbot && (
+        
+        <div className='fixed bottom-4 right-24 z-50 bg-[#111826] shadow-sm shadow-slate-400 rounded-lg flex flex-col items-center justify-center'>
+          <h1 className='text-white font-serif p-2 font-semibold'>ChatBot</h1>
+          <div className='w-80 h-2/3 bg-[#111826] overflow-scroll scrollbar-hide px-2 rounded-lg'>
+          <Chatbot />
+        </div>
+        </div>
+      )}
     </div>
   )
 }
