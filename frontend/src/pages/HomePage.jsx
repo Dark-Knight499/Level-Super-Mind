@@ -215,7 +215,7 @@ export default function HomePage () {
       </button>
       {chatbot && (
         
-        <div className='fixed bottom-4 right-24 z-50 bg-[#111826] shadow-sm shadow-slate-400 rounded-lg flex flex-col items-center justify-center'>
+        <div className='fixed bottom-16 right-4 z-50 bg-[#111826] shadow-sm shadow-slate-400 rounded-lg flex flex-col items-center justify-center'>
           <h1 className='text-white font-serif p-2 font-semibold'>ChatBot</h1>
           <div className='w-80 h-2/3 bg-[#111826] overflow-scroll scrollbar-hide px-2 rounded-lg'>
           <Chatbot />

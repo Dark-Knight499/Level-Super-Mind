@@ -38,7 +38,7 @@ const Chatbot = () => {
     await wait(1000);
     
 
-    const botResponse = 'I am a bot. I am not capable of answering your question. Please ask a human. lorem ipsum dolor sit amet, consectetur adipiscing elit.'; ; 
+    const botResponse = '**I am a bot**. I am not capable of answering your question. Please ask a human. lorem ipsum dolor sit amet, consectetur adipiscing elit.'; ; 
     
 
     setMessage((prevMessages) => [
@@ -66,7 +66,7 @@ const Chatbot = () => {
        
         <div
           id="ans"
-          className="overflow-y-scroll  m-0 p-4 rounded-xl h-5/6 w-3/4 mx-auto scrollbar-hide"
+          className="overflow-y-scroll  m-0 p-4 rounded-xl h-5/6 w-5/6 mx-auto scrollbar-hide"
         >
           {message.map((msg, index) => (
             <div
