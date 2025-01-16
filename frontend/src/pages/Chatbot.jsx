@@ -71,16 +71,17 @@ const Chatbot = () => {
           {message.map((msg, index) => (
             <div
               key={index}
-              className={`bg-gray-700 p-4  lg:max-w-[90%]  max-w-[100%] w-fit text-white rounded-xl my-2 ${
-                msg.isUser ? "ml-auto" : "mr-auto"
+              className={`px-4 py-2 leading-relaxed  lg:max-w-[90%]  max-w-[100%] w-fit rounded-md my-2 ${
+                msg.isUser ? "ml-auto bg-indigo-600 text-white" : "mr-auto bg-neutral-100 text-black"
               }`}
             >
+
               <ReactMarkdown>{msg.text}</ReactMarkdown>
             </div>
           ))}
 
           {loading && (
-            <div className="bg-gray-700 p-4 max-w-[70%]  w-fit text-white rounded-xl my-2 mr-auto">
+            <div className="bg-neutral-100 p-4 max-w-[70%]  w-fit text-black rounded-xl my-2 mr-auto">
               Typing...
             </div>
           )}
@@ -95,13 +96,13 @@ const Chatbot = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Ask about socials"
-            className="flex-1 p-2 bg-gray-700 text-white placeholder-gray-400 rounded-xl focus:outline-none"
+            className="flex-1 p-2 bg-neutral-100 text-black placeholder-gray-600 rounded-md focus:outline-none"
             autoComplete="off"
             onKeyDown={handleKeyDown}
           />
           <button
             onClick={ask}
-            className="bg-gray-950 hover:bg-gray-900 text-white px-4 py-2 rounded-md focus:outline-none"
+            className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md focus:outline-none"
             disabled={loading} // Disable the button while loading
           >
             {loading ? "wait" : "Ask"}

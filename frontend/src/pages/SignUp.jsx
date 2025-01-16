@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { app } from "../firebaseConfig";
+import { Link } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -29,8 +30,8 @@ const SignUp = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded shadow-md">
-        <h2 className="text-2xl font-bold text-center">Sign Up</h2>
+      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
+        <h2 className="text-3xl font-bold text-center text-indigo-600 mb-6">Sign Up</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
@@ -47,7 +48,7 @@ const SignUp = () => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div>
@@ -65,7 +66,7 @@ const SignUp = () => {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div>
@@ -77,6 +78,9 @@ const SignUp = () => {
             </button>
           </div>
         </form>
+        <div>
+          <span className="text-sm text-gray-700 font-medium leading-loose">Already have an account? <Link to='/login' className="text-indigo-500 hover:text-indigo-600">Login</Link></span>
+        </div>
       </div>
     </div>
   );
