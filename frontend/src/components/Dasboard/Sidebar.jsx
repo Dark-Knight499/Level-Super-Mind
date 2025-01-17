@@ -15,25 +15,25 @@ const SIDEBAR_ITEMS = [
     name: 'Home',
     icon: House,
     color: '#3B82F6', // Blue
-    link: '/'
-  },
-  {
-    name: 'Chatbot',
-    icon: BotMessageSquare,
-    color: '#EC4899', // Pink
-    link: '/chatbot'
-  },
-  {
-    name: 'Dashboard',
-    icon: TrendingUp,
-    color: '#10B981', // Green
     link: '/dashboard'
   },
   {
-    name: 'Team',
+    name: 'Ask AI',
+    icon: BotMessageSquare,
+    color: '#EC4899', // Pink
+    link: '/dashboard/askai'
+  },
+  {
+    name: 'Analytics',
+    icon: TrendingUp,
+    color: '#10B981', // Green
+    link: '/dashboard/analytics'
+  },
+  {
+    name: 'Meet Up',
     icon: Users,
     color: '#F59E0B', // Yellow
-    link: '/team'
+    link: '/dashboard/meetup'
   }
 ]
 
@@ -49,14 +49,30 @@ const Sidebar = ({ user, onLogout }) => {
     >
       <div className='h-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 p-4 flex flex-col border-r border-gray-600'>
         {/* Sidebar Toggle Button */}
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className='p-2 rounded-full hover:bg-gray-700 transition-colors cursor-pointer max-w-fit'
-        >
-          <Menu size={24} className='text-white' />
-        </motion.button>
+        <div className='flex items-center'>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className='p-2 rounded-full hover:bg-gray-700 transition-colors cursor-pointer max-w-fit'
+          >
+            <Menu size={24} className='text-white' />
+            {/* <img src="" alt="Logo" /> */}
+          </motion.button>
+          <AnimatePresence>
+            {isSidebarOpen && (
+              <motion.p
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: 'auto' }}
+                exit={{ opacity: 0, width: 0 }}
+                transition={{ duration: 0.2, delay: 0.3 }}
+                className='ml-4 text-xl font-bold whitespace-nowrap text-white'
+              >
+                Logo Hu Mai
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
 
         {/* Navigation Items */}
         <nav className='mt-8 flex-grow'>

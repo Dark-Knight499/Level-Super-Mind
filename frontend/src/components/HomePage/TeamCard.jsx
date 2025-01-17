@@ -30,8 +30,8 @@ const people = [
     role: 'Backend Developer',
     imageUrl:
       'https://rukminim2.flixcart.com/image/850/1000/kxtaxzk0/poster/3/6/c/medium-anime-dr-stone-senku-ishigami-matte-finish-poster-original-imaga6jqxw4bgaep.jpeg?q=90&crop=false',
-      git:'https://github.com/Prasham-Karkera',
-      linkedIn:'https://www.linkedin.com/in/prasham-karkera-3a6820290/'
+    git: 'https://github.com/Prasham-Karkera',
+    linkedIn: 'https://www.linkedin.com/in/prasham-karkera-3a6820290/'
   }
 ]
 
@@ -41,7 +41,10 @@ const TeamCard = person => {
       <div className='mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3'>
         <div className='max-w-xl'>
           <h2 className='text-pretty text-3xl font-semibold tracking-tight text-white sm:text-4xl'>
-            Meet <span className='text-[#4F46E5]'>3beans4coffee</span>
+            Meet{' '}
+            <span className='bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] bg-clip-text text-transparent'>
+              3beans4coffee
+            </span>
           </h2>
           <p className='mt-6 text-lg/8 text-gray-400 leading-relaxed'>
             We&apos;re a dynamic group of individuals who are passionate about
@@ -62,17 +65,23 @@ const TeamCard = person => {
                   className='size-16 rounded-full'
                 />
                 <div>
-                  <h3 className='text-base/7 font-semibold tracking-tight text-white'>
+                  <h3 className='text-base/7 font-semibold tracking-tight bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] bg-clip-text text-transparent'>
                     {person.name}
                   </h3>
-                  <p className='text-sm/6 font-semibold text-[#4F46E5]'>
-                    {person.role}
-                  </p>
-                  <div className='flex gap-x-2'>
-                    <a href={person.linkedIn} className='text-[#4F46E5]' target='_blank'>
+                  <p className='text-sm/6 font-semibold text-white'>{person.role}</p>
+                  <div className='flex gap-x-4'>
+                    <a
+                      href={person.linkedIn}
+                      className='text-white hover:text-indigo-300'
+                      target='_blank'
+                    >
                       <Linkedin size={20} />
                     </a>
-                    <a href={person.git} className='text-[#4F46E5]' target='_blank'>
+                    <a
+                      href={person.git}
+                      className='text-white hover:text-indigo-300'
+                      target='_blank'
+                    >
                       <Github size={20} />
                     </a>
                   </div>

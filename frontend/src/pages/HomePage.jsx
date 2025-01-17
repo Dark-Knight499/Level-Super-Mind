@@ -96,14 +96,17 @@ export default function HomePage () {
                 <a
                   key={item.name}
                   href={item.href}
-                  className='text-sm/6 font-semibold text-white hover:text-indigo-600'
+                  className='relative text-sm/6 font-semibold text-white pb-1 before:absolute before:h-[2px] before:w-0 before:bg-gradient-to-br before:from-[#ff80b5] before:to-[#9089fc] before:bottom-0 before:left-1/2 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:before:translate-x-0'
                 >
                   {item.name}
                 </a>
               ))}
             </div>
             <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-              <Link to='/login' className='text-sm/6 font-semibold text-white'>
+              <Link
+                to='/login'
+                className='relative text-sm/6 font-semibold text-white pb-1 before:absolute before:h-[2px] before:w-0 before:bg-gradient-to-br before:from-[#ff80b5] before:to-[#9089fc] before:bottom-0 before:left-1/2 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:before:translate-x-0'
+              >
                 Log in <span aria-hidden='true'>&rarr;</span>
               </Link>
             </div>
@@ -191,9 +194,9 @@ export default function HomePage () {
               <div className='mt-10 flex items-center justify-center gap-x-6'>
                 <a
                   href='/signup'
-                  className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-transparent hover:border hover:border-indigo-600 hover:text-indigo-600'
+                  className='relative rounded-full px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm border-[2px] border-gray-300 before:absolute before:h-10 before:w-0 before:bg-gradient-to-br before:from-[#ff80b5] before:to-[#9089fc] before:left-0 before:top-0 before:rounded-full hover:before:w-full overflow-hidden before:transition-all before:duration-300'
                 >
-                  Get started
+                  <span className='relative z-10'>Get started</span>
                 </a>
               </div>
             </div>
